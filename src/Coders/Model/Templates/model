@@ -1,13 +1,16 @@
 <?php
 
 /**
- * Created by Reliese Model.
+ * Created by Codemax Reliese.
  * Date: {{date}}.
  */
 
 namespace {{namespace}};
 
-use {{parent}} as Eloquent;
+use Codemax\Database\Eloquent\Model as Eloquent;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
+use Webpatser\Uuid\Uuid;
 
 /**
  * Class {{class}}
@@ -15,7 +18,18 @@ use {{parent}} as Eloquent;
  *
  * @package {{namespace}}
  */
-class {{class}} extends Eloquent
+class {{class}} extends Eloquent implements Transformable
 {
+    use TransformableTrait;
+
 {{body}}
+
+    public static function boot()
+    {
+        parent::boot();
+        self::creating(function ($model) {
+            if(isset($model->uuid))
+            $model->uuid = (string) Uuid::generate(4);
+        });
+    }
 }

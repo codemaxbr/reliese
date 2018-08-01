@@ -52,7 +52,7 @@ return [
         |
         */
 
-        'parent' => Codemax\Database\Eloquent\Model::class,
+        'parent' => \Codemax\Database\Eloquent\Model::class,
 
         /*
         |--------------------------------------------------------------------------
