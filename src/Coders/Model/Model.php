@@ -5,25 +5,25 @@
  * Date: 11/09/16 12:11 PM.
  */
 
-namespace Reliese\Coders\Model;
+namespace Codemax\Coders\Model;
 
 use Illuminate\Support\Str;
-use Reliese\Meta\Blueprint;
+use Codemax\Meta\Blueprint;
 use Illuminate\Support\Fluent;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Reliese\Coders\Model\Relations\BelongsTo;
+use Codemax\Coders\Model\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Reliese\Coders\Model\Relations\ReferenceFactory;
+use Codemax\Coders\Model\Relations\ReferenceFactory;
 
 class Model
 {
     /**
-     * @var \Reliese\Meta\Blueprint
+     * @var \Codemax\Meta\Blueprint
      */
     private $blueprint;
 
     /**
-     * @var \Reliese\Coders\Model\Factory
+     * @var \Codemax\Coders\Model\Factory
      */
     private $factory;
 
@@ -38,7 +38,7 @@ class Model
     protected $relations = [];
 
     /**
-     * @var \Reliese\Meta\Blueprint[]
+     * @var \Codemax\Meta\Blueprint[]
      */
     protected $references = [];
 
@@ -58,12 +58,12 @@ class Model
     protected $casts = [];
 
     /**
-     * @var \Reliese\Coders\Model\Mutator[]
+     * @var \Codemax\Coders\Model\Mutator[]
      */
     protected $mutators = [];
 
     /**
-     * @var \Reliese\Coders\Model\Mutation[]
+     * @var \Codemax\Coders\Model\Mutation[]
      */
     protected $mutations = [];
 
@@ -155,9 +155,9 @@ class Model
     /**
      * ModelClass constructor.
      *
-     * @param \Reliese\Meta\Blueprint $blueprint
-     * @param \Reliese\Coders\Model\Factory $factory
-     * @param \Reliese\Coders\Model\Mutator[] $mutators
+     * @param \Codemax\Meta\Blueprint $blueprint
+     * @param \Codemax\Coders\Model\Factory $factory
+     * @param \Codemax\Coders\Model\Mutator[] $mutators
      * @param bool $loadRelations
      */
     public function __construct(Blueprint $blueprint, Factory $factory, $mutators = [], $loadRelations = true)
@@ -300,7 +300,7 @@ class Model
     /**
      * @param \Illuminate\Support\Fluent $relation
      *
-     * @return $this|\Reliese\Coders\Model\Model
+     * @return $this|\Codemax\Coders\Model\Model
      */
     public function makeRelationModel(Fluent $relation)
     {
@@ -382,7 +382,7 @@ class Model
     }
 
     /**
-     * @param \Reliese\Meta\Blueprint[] $references
+     * @param \Codemax\Meta\Blueprint[] $references
      */
     public function withReferences($references)
     {
@@ -909,7 +909,7 @@ class Model
     }
 
     /**
-     * @return \Reliese\Coders\Model\Relation[]
+     * @return \Codemax\Coders\Model\Relation[]
      */
     public function getRelations()
     {
@@ -925,7 +925,7 @@ class Model
     }
 
     /**
-     * @return \Reliese\Coders\Model\Mutation[]
+     * @return \Codemax\Coders\Model\Mutation[]
      */
     public function getMutations()
     {
@@ -1019,7 +1019,7 @@ class Model
     }
 
     /**
-     * @return \Reliese\Meta\Blueprint
+     * @return \Codemax\Meta\Blueprint
      */
     public function getBlueprint()
     {

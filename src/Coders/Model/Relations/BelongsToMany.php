@@ -5,13 +5,13 @@
  * Date: 05/10/16 11:47 PM.
  */
 
-namespace Reliese\Coders\Model\Relations;
+namespace Codemax\Coders\Model\Relations;
 
 use Illuminate\Support\Str;
-use Reliese\Support\Dumper;
+use Codemax\Support\Dumper;
 use Illuminate\Support\Fluent;
-use Reliese\Coders\Model\Model;
-use Reliese\Coders\Model\Relation;
+use Codemax\Coders\Model\Model;
+use Codemax\Coders\Model\Relation;
 use Illuminate\Database\Eloquent\Collection;
 
 class BelongsToMany implements Relation
@@ -27,17 +27,17 @@ class BelongsToMany implements Relation
     protected $referenceCommand;
 
     /**
-     * @var \Reliese\Coders\Model\Model
+     * @var \Codemax\Coders\Model\Model
      */
     protected $parent;
 
     /**
-     * @var \Reliese\Coders\Model\Model
+     * @var \Codemax\Coders\Model\Model
      */
     protected $pivot;
 
     /**
-     * @var \Reliese\Coders\Model\Model
+     * @var \Codemax\Coders\Model\Model
      */
     protected $reference;
 
@@ -46,9 +46,9 @@ class BelongsToMany implements Relation
      *
      * @param \Illuminate\Support\Fluent $parentCommand
      * @param \Illuminate\Support\Fluent $referenceCommand
-     * @param \Reliese\Coders\Model\Model $parent
-     * @param \Reliese\Coders\Model\Model $pivot
-     * @param \Reliese\Coders\Model\Model $reference
+     * @param \Codemax\Coders\Model\Model $parent
+     * @param \Codemax\Coders\Model\Model $pivot
+     * @param \Codemax\Coders\Model\Model $reference
      */
     public function __construct(Fluent $parentCommand, Fluent $referenceCommand, Model $parent, Model $pivot, Model $reference)
     {

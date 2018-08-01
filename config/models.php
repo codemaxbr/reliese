@@ -52,7 +52,7 @@ return [
         |
         */
 
-        'parent' => Reliese\Database\Eloquent\Model::class,
+        'parent' => Codemax\Database\Eloquent\Model::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -68,8 +68,8 @@ return [
         */
 
         'use' => [
-            // Reliese\Database\Eloquent\BitBooleans::class,
-            // Reliese\Database\Eloquent\BlamableBehavior::class,
+            // Codemax\Database\Eloquent\BitBooleans::class,
+            // Codemax\Database\Eloquent\BlamableBehavior::class,
         ],
 
         /*
@@ -284,7 +284,7 @@ return [
     //     'snake_attributes' => false,
     //     'qualified_tables' => true,
     //     'use' => [
-    //         Reliese\Database\Eloquent\BitBooleans::class,
+    //         Codemax\Database\Eloquent\BitBooleans::class,
     //     ],
     //     'except' => ['migrations'],
     //      // Table Specifics Bellow:

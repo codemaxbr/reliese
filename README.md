@@ -31,7 +31,7 @@ Add the service provider to your `config/app.php` file within the `providers` ke
      * Package Service Providers...
      */
 
-    Reliese\Coders\CodersServiceProvider::class,
+    Codemax\Coders\CodersServiceProvider::class,
 ],
 // ...
 ```
@@ -49,7 +49,7 @@ Then you'll need to register the provider in `app/Providers/AppServiceProvider.p
 public function register()
 {
     if ($this->app->environment() == 'local') {
-        $this->app->register(\Reliese\Coders\CodersServiceProvider::class);
+        $this->app->register(\Codemax\Coders\CodersServiceProvider::class);
     }
 }
 ```

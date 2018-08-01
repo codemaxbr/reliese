@@ -1,6 +1,6 @@
 <?php
 
-use Reliese\Meta\Blueprint;
+use Codemax\Meta\Blueprint;
 
 /**
  * Created by Cristian.

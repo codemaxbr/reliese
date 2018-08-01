@@ -5,13 +5,13 @@
  * Date: 19/09/16 11:58 PM.
  */
 
-namespace Reliese\Coders\Model;
+namespace Codemax\Coders\Model;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use Reliese\Meta\Blueprint;
-use Reliese\Support\Classify;
-use Reliese\Meta\SchemaManager;
+use Codemax\Meta\Blueprint;
+use Codemax\Support\Classify;
+use Codemax\Meta\SchemaManager;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Database\DatabaseManager;
 
@@ -23,7 +23,7 @@ class Factory
     private $db;
 
     /**
-     * @var \Reliese\Meta\SchemaManager
+     * @var \Codemax\Meta\SchemaManager
      */
     protected $schemas;
 
@@ -33,22 +33,22 @@ class Factory
     protected $files;
 
     /**
-     * @var \Reliese\Support\Classify
+     * @var \Codemax\Support\Classify
      */
     protected $class;
 
     /**
-     * @var \Reliese\Coders\Model\Config
+     * @var \Codemax\Coders\Model\Config
      */
     protected $config;
 
     /**
-     * @var \Reliese\Coders\Model\ModelManager
+     * @var \Codemax\Coders\Model\ModelManager
      */
     protected $models;
 
     /**
-     * @var \Reliese\Coders\Model\Mutator[]
+     * @var \Codemax\Coders\Model\Mutator[]
      */
     protected $mutators = [];
 
@@ -57,8 +57,8 @@ class Factory
      *
      * @param \Illuminate\Database\DatabaseManager $db
      * @param \Illuminate\Filesystem\Filesystem $files
-     * @param \Reliese\Support\Classify $writer
-     * @param \Reliese\Coders\Model\Config $config
+     * @param \Codemax\Support\Classify $writer
+     * @param \Codemax\Coders\Model\Config $config
      */
     public function __construct(DatabaseManager $db, Filesystem $files, Classify $writer, Config $config)
     {
@@ -69,7 +69,7 @@ class Factory
     }
 
     /**
-     * @return \Reliese\Coders\Model\Mutator
+     * @return \Codemax\Coders\Model\Mutator
      */
     public function mutate()
     {
@@ -77,7 +77,7 @@ class Factory
     }
 
     /**
-     * @return \Reliese\Coders\Model\ModelManager
+     * @return \Codemax\Coders\Model\ModelManager
      */
     protected function models()
     {
@@ -121,7 +121,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Meta\Blueprint $blueprint
+     * @param \Codemax\Meta\Blueprint $blueprint
      *
      * @return bool
      */
@@ -160,7 +160,7 @@ class Factory
      *
      * @param bool $withRelations
      *
-     * @return \Reliese\Coders\Model\Model
+     * @return \Codemax\Coders\Model\Model
      */
     public function makeModel($schema, $table, $withRelations = true)
     {
@@ -170,7 +170,7 @@ class Factory
     /**
      * @param string $schema
      *
-     * @return \Reliese\Meta\Schema
+     * @return \Codemax\Meta\Schema
      */
     public function makeSchema($schema)
     {
@@ -178,7 +178,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      * @todo: Delegate workload to SchemaManager and ModelManager
      *
      * @return array
@@ -204,7 +204,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      * @param string $name
      *
      * @return string
@@ -219,7 +219,7 @@ class Factory
 
     /**
      * @param string $template
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      *
      * @return mixed
      */
@@ -236,7 +236,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      *
      * @return string
      */
@@ -266,7 +266,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      *
      * @return string
      */
@@ -365,7 +365,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      *
      * @param array $custom
      *
@@ -393,7 +393,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      *
      * @return bool
      */
@@ -403,7 +403,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      */
     protected function createUserFile(Model $model)
     {
@@ -419,7 +419,7 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Coders\Model\Model $model
+     * @param \Codemax\Coders\Model\Model $model
      *
      * @return string
      */
@@ -442,11 +442,11 @@ class Factory
     }
 
     /**
-     * @param \Reliese\Meta\Blueprint|null $blueprint
+     * @param \Codemax\Meta\Blueprint|null $blueprint
      * @param string $key
      * @param mixed $default
      *
-     * @return mixed|\Reliese\Coders\Model\Config
+     * @return mixed|\Codemax\Coders\Model\Config
      */
     public function config(Blueprint $blueprint = null, $key = null, $default = null)
     {

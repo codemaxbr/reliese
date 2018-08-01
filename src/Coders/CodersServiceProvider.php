@@ -1,13 +1,13 @@
 <?php
 
-namespace Reliese\Coders;
+namespace Codemax\Coders;
 
-use Reliese\Support\Classify;
-use Reliese\Coders\Model\Config;
+use Codemax\Support\Classify;
+use Codemax\Coders\Model\Config;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
-use Reliese\Coders\Console\CodeModelsCommand;
-use Reliese\Coders\Model\Factory as ModelFactory;
+use Codemax\Coders\Console\CodeModelsCommand;
+use Codemax\Coders\Model\Factory as ModelFactory;
 
 class CodersServiceProvider extends ServiceProvider
 {
